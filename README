@@ -1,0 +1,10 @@
+Coin name: Suenos Coin
+Ticker: SUE
+Algorithm: Scrypt
+Type: POS
+No Mining reward as it is pure PoS
+POS: 36.5% annually
+Max money: 200 million
+Premine: 20 million - Presale
+RPC Port: 25732
+P2P Port: 25731
