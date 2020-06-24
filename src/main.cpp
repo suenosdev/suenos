@@ -552,7 +552,7 @@ bool CTransaction::CheckTransaction() const
 
     if (IsCoinBase())
     {
-        if (vin[0].scriptSig.size() < 2 || vin[0].scriptSig.size() > 300)
+        if (vin[0].scriptSig.size() < 2 || vin[0].scriptSig.size() > 100)
             return DoS(100, error("CTransaction::CheckTransaction() : coinbase script size is invalid"));
     }
     else
@@ -2537,7 +2537,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
 
-        const char* pszTimestamp = "010620 Suenos";
+        const char* pszTimestamp = "Suenos 1620";
         CTransaction txNew;
         txNew.nTime = 1590969600;
         txNew.vin.resize(1);
@@ -2551,7 +2551,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1590969600;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = !fTestNet ? 681275 : 681275;
+        block.nNonce   = !fTestNet ? 46835 : 46835;
 
         if (false && (block.GetHash() != hashGenesisBlock)) {
 
@@ -2577,7 +2577,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("0x9f44bfddaafd3db5afddd9a6418e36f7ccd0228b5d8a61888325192f447a4469"));
+        assert(block.hashMerkleRoot == uint256("0x6480b8cb3a0448fe55a8d1f52a3b0a768fc8f02f7873ab790dbe5fc6cdfea13e"));
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
 
